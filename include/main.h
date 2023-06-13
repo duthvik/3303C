@@ -77,5 +77,13 @@ void opcontrol(void);
  */
 //#include <iostream>
 #endif
-
+#include "auto/autons.hpp"
+#include "auto/autonselector.hpp"
+#include "auto/odom.hpp"
+#include "auto/PID.hpp"
+#include "auto/skills.hpp"
+#include "subsystems/climb.hpp"
+#include "subsystems/drive.hpp"
+#include "subsystems/intake.hpp"
+#include "subsystems/puncher.hpp"
 #endif  // _PROS_MAIN_H_
