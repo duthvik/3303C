@@ -1,10 +1,10 @@
 #include "main.h"
 #include "okapi/impl/device/motor/motorGroup.hpp"
 
-extern Motor leftFront;
+extern Motor leftTop;
 extern Motor leftMid;
 extern Motor leftBack;
-extern Motor rightFront;
+extern Motor rightTop;
 extern Motor rightMid;
 extern Motor rightBack;
 
