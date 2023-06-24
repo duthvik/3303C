@@ -29,3 +29,5 @@ void updateSling()
         sling.moveVoltage(0);
     }
 }
+
+/*in pros terminal, type pros mut*/
