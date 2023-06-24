@@ -21,4 +21,3 @@ Controller controller;
 void updateDrive(){
   drive -> getModel() -> tank(controller.getAnalog(ControllerAnalog::leftY), controller.getAnalog(ControllerAnalog::rightY));
 }
-dumb nigger
