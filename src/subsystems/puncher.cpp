@@ -1,33 +1,45 @@
 #include "main.h"
+#include "okapi/api/device/motor/abstractMotor.hpp"
 #include "okapi/impl/device/controllerUtil.hpp"
 
 Motor sling(11 /*port num*/ , false /*if motor is reverse set to true*/, AbstractMotor::gearset::red, AbstractMotor::encoderUnits::degrees);
 
 bool stop=true;
 
-void updateSling()
+void moveSling(double pos)
 {
-    if(controller.getDigital(ControllerDigital::L1))
+    PID slingPID = PID(pos-sling.getPosition(), 0.2, 0, 0, 0, 1.5, 300, 1500);
+    while(slingPID.is_settled()==false)
     {
-        sling.moveVoltage(10000); /*12k highest*/
+        sling.moveVoltage(slingPID.compute(pos-sling.getPosition()));
+        pros::delay(5);
+    }
+    sling.setBrakeMode(AbstractMotor::brakeMode::hold);
+    sling.moveVoltage(0);
+}
+
+
+
+
+
+void updateSling(void* param)
+{
+  while(true)
+  {
+    if(controller.getDigital(ControllerDigital::A))
+    {
+        moveSling(300);
     }
 
-    else if(controller.getDigital(ControllerDigital::L2)&&stop==false) /*have to press a to set*/
+    else if(controller.getDigital(ControllerDigital::L1))
     {
-        sling.moveAbsolute(100, 90); /*change first digit*/
-        stop=true;
+        sling.tarePosition();
+        moveSling(-20);
+        pros::delay(100);
+        sling.tarePosition();
     }
-
-    else if(controller.getDigital(ControllerDigital::A))
-    {
-        stop=false;
-        sling.moveVoltage(0);
-    }
-    
-    else if(stop==true)
-    {
-        sling.moveVoltage(0);
-    }
+    pros::delay(7);
+  }
 }
 
 /*in pros terminal, type pros mut*/

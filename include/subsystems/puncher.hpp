@@ -3,4 +3,5 @@
 
 extern Motor sling;
 
-void updateSling();
+void moveSling(double pos);
+void updateSling(void* param);
