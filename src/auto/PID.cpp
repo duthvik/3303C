@@ -26,7 +26,7 @@ double PID::compute(double error)
 
   if ((error>0 && prevError<0)||(error<0 && prevError>0)) accumError = 0; 
 
-  output = kp*error + ki*accumError + kd*(error-prevError);
+  output = (kp*error + ki*accumError + kd*(error-prevError));
 
   prevError=error;
 
