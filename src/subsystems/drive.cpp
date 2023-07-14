@@ -1,11 +1,11 @@
 #include "main.h"
 
-Motor rightTop(18, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
-Motor rightMid(1, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
-Motor rightBack(7, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
-Motor leftTop(8, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
-Motor leftMid(5, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
-Motor leftBack(2, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
+Motor rightTop(6, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
+Motor rightMid(5, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
+Motor rightBack(4, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
+Motor leftTop(9, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
+Motor leftMid(8, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
+Motor leftBack(7, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);
 
 std::shared_ptr<OdomChassisController> drive =
      ChassisControllerBuilder()
