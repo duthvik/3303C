@@ -6,7 +6,7 @@
 #include <iostream>
 
 Motor sling1(10 /*port num*/ , true /*if motor is reverse set to true*/, AbstractMotor::gearset::green, AbstractMotor::encoderUnits::degrees);
-Motor sling2(3, false, AbstractMotor::gearset::green, AbstractMotor::encoderUnits::degrees);
+Motor sling2(1, false, AbstractMotor::gearset::green, AbstractMotor::encoderUnits::degrees);
 bool stop=true;
 
 MotorGroup sling({sling1, sling2});
