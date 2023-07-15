@@ -116,14 +116,15 @@ ControllerButton go(ControllerDigital::A);
 void updateSling()
 {
   while(true)
-  {
-    if(go.changedToPressed())
-    {
-        sling1.tarePosition();
-        sling2.tarePosition();
-        pros::delay(200);
-        moveSling(0);
-    }
+  //{
+    //
+    //if(go.changedToPressed())
+    //{
+   //     sling1.tarePosition();
+   //     sling2.tarePosition();
+   //     pros::delay(200);
+   //     moveSling(0);
+  //  }
 
   //   else if(controller.getDigital(ControllerDigital::L1))
   //   {
