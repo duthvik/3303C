@@ -5,8 +5,8 @@
 #include "okapi/impl/device/rotarysensor/rotationSensor.hpp"
 #include <iostream>
 
-Motor sling1(20 /*port num*/ , true /*if motor is reverse set to true*/, AbstractMotor::gearset::green, AbstractMotor::encoderUnits::degrees);
-Motor sling2(21, false, AbstractMotor::gearset::green, AbstractMotor::encoderUnits::degrees);
+Motor sling1(10 /*port num*/ , true /*if motor is reverse set to true*/, AbstractMotor::gearset::green, AbstractMotor::encoderUnits::degrees);
+Motor sling2(3, false, AbstractMotor::gearset::green, AbstractMotor::encoderUnits::degrees);
 bool stop=true;
 
 MotorGroup sling({sling1, sling2});
