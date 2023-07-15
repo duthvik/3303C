@@ -86,13 +86,12 @@ void autonomous() {}
 
 void opcontrol() {
 	
-	pros::Task o(updateSling);
+	pros::Task o(updateDrive);
 	pros::Task p(updateClaw);
-
-	// while(true)
-	// {
-	// 	 updateSling();
-	// 	pros::delay(7);
-	// }
+	 while(true)
+	 {
+	 	 updateDrive();
+	 	pros::delay(7);
+	 }
 	
 }
