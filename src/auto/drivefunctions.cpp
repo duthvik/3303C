@@ -241,7 +241,7 @@ double Drive::get_ForwardTracker_position(){
 
 void Drive::position_track(){
   while(1){
-    odom.update_position(get_ForwardTracker_position(), get_SidewaysTracker_position(), get_absolute_heading());
+    odom.update_position(get_ForwardTracker_position(), 0, get_absolute_heading());
     pros::delay(5);
   }
 }

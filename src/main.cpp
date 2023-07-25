@@ -2,6 +2,9 @@
 #include "okapi/api/device/motor/abstractMotor.hpp"
 #include "pros/rtos.hpp"
 
+
+Drive chassis(3.25, 0.6,360,3.25,5.2,0,0);
+
 /**
  * A callback function for LLEMU's center button.
  *
