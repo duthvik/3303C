@@ -1,10 +1,11 @@
 #include "main.h"
 #include "okapi/impl/device/rotarysensor/IMU.hpp"
+#include "pros/imu.hpp"
 
 #pragma once
 
 
-
+extern pros::Imu inertial;
 
 
 
@@ -121,3 +122,6 @@ public:
 
 
 };
+
+
+Drive chassis(3.25, 0.6,360,3.25,5.2,0,0);
