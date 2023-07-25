@@ -53,7 +53,51 @@ void disabled() {}
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.
  */
-void competition_initialize() {}
+ int currentAuton = 0;
+    bool autonStart = false;
+void competition_initialize() {
+
+
+	
+
+     while(autonStart == false)
+     {            //Changing the names below will only change their names on the
+        pros::screen::erase();
+        switch(currentAuton){       //Tap the brain screen to cycle through autons.
+        case 0:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 1");
+            break;
+        case 1:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 2");
+            break;
+        case 2:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 3");
+            break;
+        case 3:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 4");
+            break;
+        case 4:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 5");
+            break;
+        case 5:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 6");
+            break;
+        case 6:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 7");
+            break;
+        case 7:
+            pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Auton 8");
+            break;
+        }
+        if(autonButton.isPressed()){
+			while (autonButton.isPressed()) {}
+            currentAuton ++;
+        } else if (currentAuton == 8){
+            currentAuton = 0;
+        }
+        pros::delay(10);
+      }
+}
 
 /**
  * Runs the user autonomous code. This function will be started in its own task
@@ -66,7 +110,38 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() {
+	 autonStart = true;
+  switch(currentAuton){  
+    case 0:
+
+      break;        
+    case 1:  
+
+      break;
+    case 2:
+      
+      break;
+    case 3:
+      
+      break;
+    case 4:
+      
+      break;
+    case 5:
+      
+      break;
+    case 6:
+      
+      break;
+    case 7:
+      
+      break;
+  }
+	pros::Task(chassis.print_odom_task);
+	pros::Task(chassis.position_track_task);
+	
+}
 
 /**
  * Runs the operator control code. This function will be started in its own task
@@ -85,7 +160,8 @@ void autonomous() {}
 
 
 void opcontrol() {
-	
+	pros::Task(chassis.print_odom_task);
+	pros::Task(chassis.position_track_task);
 	pros::Task o(updateSling);
 	pros::Task p(updateClaw);
 	 while(true)

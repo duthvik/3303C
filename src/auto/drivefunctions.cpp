@@ -356,3 +356,15 @@ int Drive::position_track_task(){
   chassis.position_track();
   return(0);
 }
+
+int Drive::print_odom_task()
+{
+  while(1)
+  {
+    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "X: %f", chassis.get_X_position());
+    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 6, "X: %f", chassis.get_Y_position());
+    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 8, "X: %f", chassis.get_absolute_heading());
+    pros::delay(5);
+  }
+  return 0;
+}
