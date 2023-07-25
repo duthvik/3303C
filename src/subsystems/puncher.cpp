@@ -116,7 +116,7 @@ ControllerButton go(ControllerDigital::A);
 void updateSling()
 {
   while(true)
-  //{
+  {
     //
     //if(go.changedToPressed())
     //{
