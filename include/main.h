@@ -86,4 +86,6 @@ void opcontrol(void);
 #include "subsystems/drive.hpp"
 #include "subsystems/intake.hpp"
 #include "subsystems/puncher.hpp"
+#include "auto/util.hpp"
+#include "auto/drivefunctions.hpp"
 #endif  // _PROS_MAIN_H_
