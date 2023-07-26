@@ -163,8 +163,8 @@ void autonomous() {
 
 
 void opcontrol() {
-	pros::Task(chassis.print_odom_task);
-	pros::Task(chassis.position_track_task);
+	pros::Task s(chassis.print_odom_task);
+	pros::Task r(chassis.position_track_task);
 	pros::Task o(updateSling);
 	pros::Task p(updateClaw);
 	 while(true)

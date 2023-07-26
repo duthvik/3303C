@@ -97,11 +97,11 @@ double Drive::get_absolute_heading(){
 }
 
 double Drive::get_left_position_in(){
-  return( leftMid.getPosition()*drive_in_to_deg_ratio );
+  return( leftTop.getPosition()*drive_in_to_deg_ratio );
 }
 
 double Drive::get_right_position_in(){
-  return( rightMid.getPosition()*drive_in_to_deg_ratio );
+  return( rightTop.getPosition()*drive_in_to_deg_ratio );
 }
 
 void Drive::turn_to_angle(double angle){
@@ -361,9 +361,9 @@ int Drive::print_odom_task()
 {
   while(1)
   {
-    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "X: %f", chassis.get_X_position());
-    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 6, "X: %f", chassis.get_Y_position());
-    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 8, "X: %f", chassis.get_absolute_heading());
+    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 2, "X: %f", chassis.get_X_position());
+    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 4, "Y: %f", chassis.get_Y_position());
+    pros::screen::print(pros::E_TEXT_MEDIUM_CENTER, 6, "Heading: %f", chassis.get_absolute_heading());
     pros::delay(5);
   }
   return 0;
